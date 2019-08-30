@@ -14,6 +14,7 @@ import app from './App.vue'
 
 
 
+
 new Vue({
     el : '#app',
     data : {
