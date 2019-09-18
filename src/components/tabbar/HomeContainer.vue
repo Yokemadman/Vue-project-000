@@ -1,14 +1,7 @@
 <template>
   <div>
     <!--轮播图区域-->
-    <mt-swipe :auto="4000">
-      <!--<mt-swipe-item v-for="item in lunbotuList" :key="item.url">
-        <img :src="item.img" alt="">
-      </mt-swipe-item>-->
-        <mt-swipe-item>1</mt-swipe-item>
-        <mt-swipe-item>2</mt-swipe-item>
-        <mt-swipe-item>3</mt-swipe-item>
-    </mt-swipe>
+    <swiper :lunbotuList="lunbotuList" :isfull="true"></swiper>
     <!--九宫格到 6宫格-->
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
@@ -18,16 +11,16 @@
         </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link to="/home/photolist">
           <img src="../../images/menu2.png" alt="">
           <div class="mui-media-body">图片分享</div>
-        </a>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link to="/home/goodslist">
           <img src="../../images/menu3.png" alt="">
           <div class="mui-media-body">商品购买</div>
-        </a>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
@@ -56,6 +49,7 @@
 
 <script>
   import  { Toast } from 'mint-ui'
+  import swiper from '../subcomponents/swiper.vue'
   export default {
     data(){
       return{
@@ -63,7 +57,7 @@
       }
     },
     created(){
-      /*this.getLunbotu()*/
+      this.getLunbotu()
     },
     methods:{
       getLunbotu(){ //获取轮播数据
@@ -78,30 +72,14 @@
               }
          })
       }
+    },
+    components:{
+      swiper
     }
   }
 </script>
 
 <style lang="scss" scoped>
- .mint-swipe{
-   height: 200px;
-   .mint-swipe-item{
-
-     &:nth-child(1){
-       background: red;
-     }
-     &:nth-child(2){
-       background: brown;
-     }
-     &:nth-child(3){
-       background: #2ac845;
-     }
-     img{
-       width: 100%;
-       height: 100%;
-     }
-   }
- }
   .mui-grid-view.mui-grid-9{
     background: #fff;
     border: none;

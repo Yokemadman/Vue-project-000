@@ -1,27 +1,16 @@
 <template>
- <!-- <div class="newsinfo-container">
+  <div class="newsinfo-container">
     <h3 color="title">{{ newsInfo.title }}</h3>
     <p class="subtitle">
       <span>发表时间:{{ newsInfo.add_time | dateFormat }}</span>
       <span>点击:{{ newsInfo.click }}次</span>
     </p>
      <hr>
-    <div class="content" v-html="newInfo.content"></div>
-  </div>-->
-  <div class="newsinfo-container">
-    <h3 color="title"> newsInfo.title </h3>
-    <p class="subtitle">
-      <span>发表时间: newsInfo.add_time | dateFormat </span>
-      <span>点击: newsInfo.click 次</span>
-    </p>
-    <hr>
-    <!--内容区域-->
-    <div class="content" >
-      <p>v-html="newInfo.content"</p>
-    </div>
+    <div class="content" v-html="newsInfo.content"></div>
     <!--评论子组件区域-->
     <comment-box :id="this.id"></comment-box>
   </div>
+
 </template>
 
 <script>
@@ -35,12 +24,12 @@
       }
     },
     created(){
-      /*this.getNewsInfo()*/
+      this.getNewsInfo()
     },
     methods:{
     getNewsInfo(){
       this.$http.get('api/getnew/'+this.id).then(result=>{
-         if(result.bodu.status === 0){
+         if(result.body.status === 0){
             this.newsInfo = result.body.message[0];
            }else{
            Toast("获取新闻失败")
