@@ -41,9 +41,6 @@
         </a>
       </li>
     </ul>
-
-
-    <h3>HomeContainer</h3>
   </div>
 </template>
 

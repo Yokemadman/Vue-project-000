@@ -19,7 +19,7 @@ var router = new VueRouter({
   routes:[//配置路由规则
     { path: '/', redirect:'/home'},
     { path: '/home', component:HomeContainer},
-    { path: '/member', component:MemberContainer},
+    { path: '/member',component:MemberContainer},
     { path: '/shopcar', component:ShopcarContainer},
     { path: '/search', component:SearchContainer},
     { path: '/home/newList', component:NewsList},
