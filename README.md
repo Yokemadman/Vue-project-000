@@ -108,3 +108,25 @@
 2. 保证手机和电脑处于同一个WiFi环境中，手机可以访问电脑的ip
 3. 打开项目中的package.json文件，在dev脚本中，添加一个 --host指令，把当前电脑的wifi ip地址，设置为--host的指令值
    + 如何查看wifi的ip，cmd运行‘ipconfig’，查看无线网的ip地址
+   
+   
+### 页面效果图展示
+**主页**
+
+![主页](./photo/index.png)
+
+**新闻**
+
+![新闻](./photo/news.png)
+
+**图片分享**
+
+ ![图片分享](./photo/photo.png)
+
+**商品列表**
+
+![商品列表](./photo/goods.png)
+
+**购物车**
+
+![购物车结算](./photo/shopcar.png)
